@@ -1,0 +1,98 @@
+/* Login.css */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f0f2ff 0%, #764ba2 100%);
+  padding: 0 50px;
+  box-sizing: border-box;
+  width: 1513px;
+  height: 120vh;
+}
+
+.login-card {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-icon {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.login-card label {
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.login-card input[type="email"],
+.login-card input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f1f5ff;
+}
+
+.login-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.login-options input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #1976d2;
+  cursor: pointer;
+}
+
+.login-card button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-card button:hover {
+  background-color: #0d47a1;
+}
+
+.login-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-links a {
+  text-decoration: none;
+  color: #1976d2;
+}
+
+.login-error {
+  font-size: 13px;
+  color: red;
+  margin-top: 5px;
+}

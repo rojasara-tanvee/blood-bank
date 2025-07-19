@@ -1,0 +1,209 @@
+.footer-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #2c3e50;
+  padding: 50px 20px 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 0px;
+  position: relative;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1513px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-column {
+  flex: 1 1 250px;
+  padding: 20px;
+  background: #f8f6ff;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(118, 75, 162, 0.1);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(118, 75, 162, 0.08);
+}
+
+.footer-column:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(118, 75, 162, 0.12);
+  background: #ffffff;
+  border-color: rgba(118, 75, 162, 0.2);
+}
+
+.footer-column h4 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c3e50;
+  text-shadow: none;
+  border-bottom: 2px solid #764ba2;
+  padding-bottom: 10px;
+}
+
+.footer-column p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #34495e;
+  text-shadow: none;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(118, 75, 162, 0.2);
+  transition: all 0.3s ease;
+}
+
+.footer-column ul li:hover {
+  padding-left: 10px;
+  border-bottom-color: rgba(118, 75, 162, 0.4);
+}
+
+.footer-column ul li a {
+  color: #34495e;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-shadow: none;
+}
+
+.footer-column ul li a:hover {
+  color: #764ba2;
+  text-decoration: none;
+  transform: translateX(5px);
+  font-weight: 600;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  color: #2c3e50;
+  margin-right: 0;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 15px;
+  background: #f8f6ff;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  border: 2px solid #764ba2;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(118, 75, 162, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icons a i {
+  font-size: 22px;
+  font-weight: 900;
+  z-index: 2;
+  position: relative;
+}
+
+.social-icons a:hover {
+  color: white;
+  transform: translateY(-5px) scale(1.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.social-icons a:hover i {
+  transform: scale(1.1);
+}
+
+/* Individual social media button colors on hover */
+.social-icons a:nth-child(1):hover {
+  background: #1877f2; /* Facebook blue */
+  border-color: #1877f2;
+  box-shadow: 0 10px 30px rgba(24, 119, 242, 0.4);
+}
+
+.social-icons a:nth-child(2):hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); /* Instagram gradient */
+  border-color: #e6683c;
+  box-shadow: 0 10px 30px rgba(225, 48, 108, 0.4);
+}
+
+.social-icons a:nth-child(3):hover {
+  background: #1da1f2; /* Twitter blue */
+  border-color: #1da1f2;
+  box-shadow: 0 10px 30px rgba(29, 161, 242, 0.4);
+}
+
+.social-icons a:nth-child(4):hover {
+  background: #25d366; /* WhatsApp green */
+  border-color: #25d366;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 30px 15px 20px;
+  }
+
+  .footer-container {
+    gap: 20px;
+    max-width: 100%;
+  }
+
+  .footer-column {
+    flex: 1 1 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .footer-column p {
+    font-size: 14px;
+  }
+
+  .social-icons a {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .footer-bottom {
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 12px;
+  }
+}

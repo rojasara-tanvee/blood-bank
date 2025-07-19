@@ -1,0 +1,104 @@
+.cause-container {
+  padding: 100px 20px;
+   background: linear-gradient(135deg, #f0f2ff 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  width: 1513px;
+}
+
+.cause-card {
+  max-width: 900px;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+}
+
+.cause-image {
+  width: 320px;
+  height: 320px;
+  border-radius: 10px;
+}
+
+.cause-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.cause-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.cause-content p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  margin: 10px 0;
+  position: relative;
+}
+
+.progress-fill {
+  width: 10%; /* hardcoded for ₹50 / ₹12000 */
+  height: 100%;
+  background-color: red;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.donation-info {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.share-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.share-btn.fb {
+  background-color: #1877f2;
+}
+
+.share-btn.wa {
+  background-color: #25d366;
+}
+
+.donate-btn {
+  background-color: #e64a19;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.donate-btn:hover {
+   background-color: #bf360c;
+}

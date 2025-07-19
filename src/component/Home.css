@@ -1,0 +1,328 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f2ff 0%, #764ba2 100%);
+}
+
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, cornsilk 0%, #764ba2 100%);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Fix gray line */
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: 100%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+
+  /* Fix extra gap */
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+
+/* Search Box */
+.search-box {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.search-box select,
+.search-box button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  min-width: 150px;
+}
+
+.find-btn {
+  background-color: #e64a19;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* CTA Section */
+.cta-text h2 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+}
+
+.cta-text span {
+  display: block;
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.circle-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.circle-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+
+/* Donations Section */
+.donations-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 20px;
+  background-color: #f8c8c8;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-align: center;
+}
+
+.donation-box {
+  flex: 1 1 300px;
+  max-width: 300px;
+}
+
+.donation-box h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.donation-box p {
+  font-size: 14px;
+  color: #333;
+}
+
+.donate-btn-outline {
+  background: none;
+  border: 1px solid #f44336;
+  color: #f44336;
+  padding: 8px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.donate-btn-outline:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+
+/* Why Donate Section */
+.why-donate-section {
+  background: linear-gradient(135deg, #34495e 0%, pink 100%);
+  padding: 60px 20px;
+  margin: 40px 0;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(116, 185, 255, 0.3);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Pattern for Why Donate */
+.why-donate-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+  background-size: 60px 60px;
+  opacity: 0.6;
+  animation: floatPattern 15s ease-in-out infinite;
+}
+
+@keyframes floatPattern {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(180deg); }
+}
+
+.why-title {
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 40px;
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.why-box {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+  padding: 25px;
+  border-left: 5px solid #e74c3c;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.why-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.why-box h4 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+.why-box p {
+  font-size: 1rem;
+  color: #2c3e50;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Guidelines Box Special Styling */
+.guidelines-box {
+  border-left: 5px solid #3498db;
+  background: linear-gradient(145deg, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.05));
+}
+
+.guidelines-box h4 {
+  color: #3498db;
+}
+
+.guidelines-link {
+  display: inline-block;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.guidelines-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+}
+/* OUR PROMISE */
+.promise-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.promise-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.promise-card {
+  background-color: #e64a19;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 220px;
+  text-align: center;
+}
+
+.promise-card img {
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+
+
+

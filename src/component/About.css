@@ -1,0 +1,104 @@
+/* Full-page wrapper */
+.about-page {
+  font-family: Arial, sans-serif;
+  width: 1513px;
+  background: linear-gradient(135deg, #f0f2ff 0%, #764ba2 100%);
+}
+
+/* Hero Section */
+.about-hero {
+  height: 400px;
+  background: url('.. /assets/blood2.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero h1 {
+  font-size: 48px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Intro Text */
+.about-intro {
+  text-align: center;
+  padding: 40px 20px;
+background: linear-gradient(135deg, cornsilk 0%, #764ba2 100%);
+}
+
+.about-intro h2 {
+  color: green;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.about-intro p {
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+/* Zigzag Section Layout */
+.about-section {
+  padding: 40px 20px;
+   background: linear-gradient(135deg, cornsilk 0%, #764ba2 100%);
+}
+
+.about-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.about-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Card Content */
+.about-card {
+  background-color: #fff;
+  padding: 30px;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 280px;
+}
+
+/* Image Section */
+.about-image {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+  padding: 5px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 60%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-row,
+  .about-row.reverse {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .about-card,
+  .about-image {
+    max-width: 100%;
+  }
+
+  .about-image img {
+    width: 80%;
+  }
+}

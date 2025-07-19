@@ -1,0 +1,124 @@
+/* Green Theme for Hospital Form */
+.hospital-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  padding: 40px 20px;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+}
+
+.hospital-form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 550px;
+  box-sizing: border-box;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.hospital-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 2.2rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.hospital-form h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(45deg, #4caf50, #2e7d32);
+  border-radius: 2px;
+}
+
+.hospital-form h2::before {
+  content: '🏥';
+  display: block;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hospital-form label {
+  display: block;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hospital-form input,
+.hospital-form textarea {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 16px;
+  border: 2px solid #c8e6c9;
+  border-radius: 12px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  font-family: inherit;
+}
+
+.hospital-form input:focus,
+.hospital-form textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+}
+
+.hospital-form button {
+  margin-top: 30px;
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 16px;
+  background: linear-gradient(45deg, #4caf50, #2e7d32);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.hospital-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+  background: linear-gradient(45deg, #388e3c, #1b5e20);
+}
+
+.hospital-form .error {
+  color: #ef4444;
+  font-size: 14px;
+  margin-top: 6px;
+  display: block;
+  font-weight: 500;
+  padding: 5px 10px;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 6px;
+  border-left: 3px solid #ef4444;
+}

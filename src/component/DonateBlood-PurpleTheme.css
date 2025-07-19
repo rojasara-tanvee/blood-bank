@@ -1,0 +1,96 @@
+/* Option 4: Purple Professional Theme */
+.donate-blood-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  min-height: 90vh;
+  text-align: center;
+  width: 1513px;
+}
+
+.search-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.search-section select,
+.search-btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ce93d8;
+}
+
+.search-section select {
+  background: white;
+  color: #7b1fa2;
+}
+
+.search-btn {
+  background: linear-gradient(45deg, #9c27b0, #7b1fa2);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(156, 39, 176, 0.4);
+}
+
+.hospital-list {
+  list-style: none;
+  padding: 0;
+}
+
+.hospital-list li {
+  background: linear-gradient(135deg, #ffffff, #f3e5f5);
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 2px solid #e1bee7;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  color: #7b1fa2;
+  font-weight: 500;
+}
+
+.hospital-list li:hover {
+  background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+  border-color: #9c27b0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(156, 39, 176, 0.2);
+}
+
+.donation-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.donation-form input,
+.donation-form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #e1bee7;
+  border-radius: 8px;
+}
+
+.donation-form button {
+  padding: 10px;
+  background: linear-gradient(45deg, #9c27b0, #7b1fa2);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);
+}

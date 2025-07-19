@@ -1,0 +1,446 @@
+/* ===== HOSPITAL FORM - PERFECT CSS ===== */
+
+/* Main Container - Full Page Background */
+.hospital-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, cornsilk 0%, #764ba2 100%);
+  padding: 90px 20px;
+  box-sizing: border-box;
+  width: 1513px;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background Pattern Overlay */
+.hospital-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+  background-size: 50px 50px;
+  opacity: 0.4;
+  pointer-events: none;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Form Container - Centered with Smaller Width */
+.hospital-form {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  width: 750px;
+  max-width: 90%;
+  box-sizing: border-box;
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 1;
+  margin: auto;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.hospital-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #ff6b6b, #ee5a52, #ff6b6b);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 200% 0; }
+  50% { background-position: -200% 0; }
+}
+
+/* Form Header */
+.hospital-form h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #2c3e50;
+  font-size: 2.8rem;
+  font-weight: 800;
+  position: relative;
+  padding-bottom: 25px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.5px;
+}
+
+.hospital-form h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a52, #ff8a80);
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+.hospital-form h2::before {
+  content: '🏥';
+  display: block;
+  font-size: 4rem;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Form Grid Layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Form Labels - Smaller Size */
+.hospital-form label {
+  display: block;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #34495e;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.hospital-form label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 16px;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+  border-radius: 2px;
+}
+
+/* Form Inputs - Smaller Size */
+.hospital-form input,
+.hospital-form textarea,
+.hospital-form select {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 14px;
+  border: 2px solid #e8ecf4;
+  border-radius: 12px;
+  box-sizing: border-box;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.9);
+  color: #2c3e50;
+  font-family: inherit;
+  font-weight: 500;
+  margin-bottom: 6px;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.hospital-form input:focus,
+.hospital-form textarea:focus,
+.hospital-form select:focus {
+  border-color: #ff6b6b;
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(255, 107, 107, 0.15),
+    0 6px 20px rgba(255, 107, 107, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px) scale(1.01);
+}
+
+.hospital-form input:hover,
+.hospital-form textarea:hover,
+.hospital-form select:hover {
+  border-color: #cbd5e0;
+  transform: translateY(-1px);
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.hospital-form textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.5;
+}
+
+/* Error Messages */
+.hospital-form .error {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 8px;
+  display: block;
+  font-weight: 600;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(231, 76, 60, 0.05));
+  border-radius: 12px;
+  border-left: 4px solid #e74c3c;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.1);
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Submit Button */
+.hospital-form button {
+  margin-top: 50px;
+  width: 100%;
+  padding: 22px 30px;
+  font-size: 18px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 50%, #ff8a80 100%);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow:
+    0 8px 25px rgba(255, 107, 107, 0.4),
+    0 0 0 0 rgba(255, 107, 107, 0.3);
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hospital-form button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.hospital-form button::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%) scale(0);
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.hospital-form button:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 15px 35px rgba(255, 107, 107, 0.5),
+    0 0 0 8px rgba(255, 107, 107, 0.1);
+  background: linear-gradient(135deg, #ff5252 0%, #d32f2f 50%, #ff6b6b 100%);
+}
+
+.hospital-form button:hover::before {
+  left: 100%;
+}
+
+.hospital-form button:hover::after {
+  transform: translateY(-50%) scale(1);
+}
+
+.hospital-form button:active {
+  transform: translateY(-2px) scale(0.98);
+  box-shadow:
+    0 8px 20px rgba(255, 107, 107, 0.4),
+    0 0 0 4px rgba(255, 107, 107, 0.2);
+}
+
+.hospital-form button:focus {
+  outline: none;
+  box-shadow:
+    0 8px 25px rgba(255, 107, 107, 0.4),
+    0 0 0 4px rgba(255, 107, 107, 0.3);
+}
+
+/* Form Field Groups for Better Spacing */
+.form-group {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.form-row {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.form-row .form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* Input Focus Indicators */
+.hospital-form input:valid,
+.hospital-form textarea:valid {
+  border-color: #27ae60;
+}
+
+.hospital-form input:valid + .validation-icon,
+.hospital-form textarea:valid + .validation-icon {
+  opacity: 1;
+  color: #27ae60;
+}
+
+.validation-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+/* Loading State */
+.hospital-form button.loading {
+  pointer-events: none;
+  background: linear-gradient(135deg, #bdc3c7, #95a5a6);
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+.hospital-form button.loading::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes loading {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hospital-form {
+    width: 800px;
+    max-width: 85%;
+    padding: 40px;
+  }
+
+  .form-grid {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hospital-page {
+    padding: 15px;
+  }
+
+  .hospital-form {
+    width: 600px;
+    max-width: 95%;
+    padding: 35px 30px;
+    border-radius: 25px;
+  }
+
+  .hospital-form h2 {
+    font-size: 2rem;
+  }
+
+  .hospital-form h2::before {
+    font-size: 2.5rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hospital-page {
+    padding: 10px;
+  }
+
+  .hospital-form {
+    width: 400px;
+    max-width: 98%;
+    padding: 25px 20px;
+    border-radius: 20px;
+  }
+
+  .hospital-form h2 {
+    font-size: 1.6rem;
+  }
+
+  .hospital-form h2::before {
+    font-size: 1.8rem;
+  }
+
+  .form-grid {
+    gap: 15px;
+  }
+
+  .hospital-form input,
+  .hospital-form textarea,
+  .hospital-form select {
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+
+  .hospital-form button {
+    padding: 18px 20px;
+    font-size: 16px;
+  }
+}

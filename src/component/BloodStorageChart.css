@@ -1,0 +1,369 @@
+/* ===== BLOOD STORAGE CHART - BEAUTIFUL CSS ===== */
+
+.blood-storage-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg,  #34495e 0%, pink 100%);
+  margin: 40px 0;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 184, 148, 0.3);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Pattern for Blood Storage */
+.blood-storage-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.15) 3px, transparent 3px),
+    radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+  background-size: 70px 70px;
+  opacity: 0.5;
+  animation: storageFloat 18s ease-in-out infinite;
+}
+
+@keyframes storageFloat {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-12px) scale(1.02); }
+}
+
+/* Header Section */
+.storage-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.storage-header h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 30px;
+  font-weight: 800;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.overall-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+  color: #2c3e50;
+  padding: 20px 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  margin: 0 0 5px 0;
+  font-weight: 700;
+  color: #00b894;
+}
+
+.stat-card p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Chart Container */
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Blood Chart */
+.blood-chart {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.blood-bar-container {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blood-bar-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.blood-type-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.blood-type {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.status-indicator {
+  font-size: 1.2rem;
+}
+
+.blood-bar-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.blood-bar-background {
+  width: 100%;
+  height: 20px;
+  background: #ecf0f1;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.blood-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.blood-bar-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+.blood-units {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2c3e50;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Chart Legend */
+.chart-legend {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  width: 100%;
+}
+
+.chart-legend h4 {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.legend-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.legend-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #2c3e50;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.legend-item:hover {
+  background-color: #f8f9fa;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.legend-color.excellent { background: #27ae60; }
+.legend-color.good { background: #f39c12; }
+.legend-color.low { background: #e67e22; }
+.legend-color.critical { background: #e74c3c; }
+
+
+
+
+/* Call to Action */
+.donation-call-to-action {
+  background: linear-gradient(135deg, pink 0%, skyblue 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(253, 121, 168, 0.4);
+}
+
+.cta-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.cta-content p {
+  margin: 0 0 20px 0;
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+.donate-now-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.donate-now-btn:hover {
+  background: white;
+  color: #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .blood-chart {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .legend-items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .overall-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blood-storage-section {
+    padding: 40px 15px;
+    margin: 20px 10px;
+  }
+
+  .storage-header h2 {
+    font-size: 2rem;
+  }
+
+  .blood-chart {
+    grid-template-columns: 1fr;
+  }
+
+  .legend-items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+
+
+  .stat-card {
+    padding: 15px 25px;
+  }
+
+  .stat-card h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .storage-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .blood-bar-container {
+    padding: 15px;
+  }
+  
+  .blood-type {
+    font-size: 1.2rem;
+  }
+  
+  .cta-content h3 {
+    font-size: 1.4rem;
+  }
+  
+  .donate-now-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}

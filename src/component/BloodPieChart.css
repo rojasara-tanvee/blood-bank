@@ -1,0 +1,474 @@
+/* ===== BLOOD PIE CHART - BEAUTIFUL CSS ===== */
+
+.blood-pie-chart-section {
+  padding: 50px 25px;
+  background: linear-gradient(145deg,#34495e 0%, pink 100%);
+  margin: 35px 0;
+  border-radius: 25px;
+  box-shadow:
+    0 20px 40px rgba(253, 121, 168, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Background Pattern */
+.blood-pie-chart-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.15) 3px, transparent 3px),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+    linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.05) 50%, transparent 60%);
+  background-size: 80px 80px, 60px 60px, 100px 100px;
+  opacity: 0.4;
+  animation: backgroundFloat 25s ease-in-out infinite;
+}
+
+.blood-pie-chart-section::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: rotate 30s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+  33% { transform: translateY(-15px) rotate(120deg) scale(1.05); }
+  66% { transform: translateY(-5px) rotate(240deg) scale(0.95); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Header */
+.pie-chart-header {
+  text-align: center;
+  margin-bottom: 35px;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.pie-chart-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  font-weight: 800;
+  text-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.3);
+  letter-spacing: 1px;
+  background: linear-gradient(45deg, #fff, #ffcccb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pie-chart-header p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+}
+
+/* Main Container */
+.pie-chart-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Pie Chart Wrapper */
+.pie-chart-wrapper {
+  position: relative;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1)),
+    rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  padding: 25px;
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.2),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pie-chart-svg {
+  width: 280px;
+  height: 280px;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.pie-chart-wrapper:hover .pie-chart-svg {
+  transform: scale(1.02);
+}
+
+.pie-segment {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pie-segment:hover {
+  filter: brightness(1.1) drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}
+
+.pie-label {
+  pointer-events: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Tooltip */
+.pie-tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  pointer-events: none;
+  z-index: 10;
+  animation: tooltipFadeIn 0.3s ease;
+}
+
+@keyframes tooltipFadeIn {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.tooltip-content {
+  line-height: 1.4;
+}
+
+/* Legend */
+.pie-chart-legend {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  flex: 1;
+  max-width: 400px;
+}
+
+.pie-chart-legend h3 {
+  margin: 0 0 20px 0;
+  color: #2c3e50;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  border-radius: 15px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.legend-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.legend-item:hover,
+.legend-item.highlighted {
+  background: linear-gradient(145deg, rgba(255, 107, 107, 0.2), rgba(255, 107, 107, 0.1));
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 8px 25px rgba(255, 107, 107, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 107, 107, 0.4);
+}
+
+.legend-item:hover::before {
+  left: 100%;
+}
+
+.legend-color-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.legend-item:hover .legend-color-dot {
+  transform: scale(1.3);
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 107, 107, 0.5);
+}
+
+.legend-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-grow: 1;
+}
+
+.legend-type {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
+
+.legend-percentage {
+  font-weight: 600;
+  color: #7f8c8d;
+  font-size: 0.8rem;
+}
+
+.legend-units {
+  font-size: 0.75rem;
+  color: #95a5a6;
+}
+
+/* Insights Section */
+.pie-chart-insights {
+  margin-top: 35px;
+  position: relative;
+  z-index: 2;
+}
+
+.insight-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.insight-card {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  padding: 20px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.insight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.insight-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow:
+    0 15px 35px rgba(255, 107, 107, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.insight-card:hover::before {
+  left: 100%;
+}
+
+.insight-card h4 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+  font-size: 1rem;
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.insight-card p {
+  margin: 0;
+  color: #34495e;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.insight-card strong {
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .pie-chart-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .pie-chart-wrapper {
+    width: 280px;
+    height: 280px;
+  }
+
+  .pie-chart-svg {
+    width: 240px;
+    height: 240px;
+  }
+
+  .pie-chart-legend {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .blood-pie-chart-section {
+    padding: 30px 15px;
+    margin: 20px 10px;
+  }
+
+  .pie-chart-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .pie-chart-wrapper {
+    width: 240px;
+    height: 240px;
+    padding: 20px;
+  }
+
+  .pie-chart-svg {
+    width: 200px;
+    height: 200px;
+  }
+
+  .pie-chart-legend {
+    padding: 20px;
+  }
+
+  .legend-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .insight-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .legend-item {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pie-chart-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .pie-chart-wrapper {
+    padding: 15px;
+  }
+  
+  .pie-chart-legend {
+    padding: 15px;
+  }
+  
+  .pie-chart-legend h3 {
+    font-size: 1.2rem;
+  }
+  
+  .insight-card {
+    padding: 20px;
+  }
+  
+  .insight-card h4 {
+    font-size: 1rem;
+  }
+  
+  .insight-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation for pie segments */
+@keyframes pieSegmentGrow {
+  from {
+    stroke-dasharray: 0 314.159;
+  }
+  to {
+    stroke-dasharray: var(--final-dasharray) 314.159;
+  }
+}
+
+/* Hover effects */
+.pie-segment.hovered {
+  filter: brightness(1.15) drop-shadow(0 0 15px rgba(0, 0, 0, 0.4));
+}
+
+.legend-item.highlighted .legend-color-dot {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
